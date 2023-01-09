@@ -10,8 +10,8 @@ vim.keymap.set("n", "<", "gv<")
 
 -- Doubles
 
-vim.keymap.set("i", "(", "()")
-vim.keymap.set("i", "'", "''")
-vim.keymap.set("i", "\"", "\"\"")
-vim.keymap.set("i", "{", "{}")
-vim.keymap.set("i", "[", "[]")
+vim.keymap.set("i", "(", "()<Esc>i")
+vim.keymap.set("i", "'", "''<Esc>i")
+vim.keymap.set("i", "\"", "\"\"<Esc>i")
+vim.keymap.set("i", "{", "{}<Esc>i")
+vim.keymap.set("i", "[", "[]<Esc>i")
