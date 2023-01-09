@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>sd", vim.cmd.ex)
+vim.keymap.set("n", "<leader>sd", vim.cmd.Ex)
 
 -- Copy and paste
 vim.keymap.set("n", "<leader>y", "\"y+")
