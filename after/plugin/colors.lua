@@ -1,9 +1,24 @@
-function C(color)
+local function toggleColor(color)
     color = color or "ayu"
     vim.cmd.colorscheme(color)
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+    if toggleColorValue == "opaque" then
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      toggleColorValue = "transparent"
+      return
+    end
+
+    if toggleColorValue == "transparent" then
+      vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(1, "NormalFloat", { bg = "none" })
+      toggleColorValue = "opaque"
+      return
+    end
+    toggleColorValue = "opaque"
 end
 
-C()
+toggleColor()
+
+vim.keymap.set("n", "<leader>c", function() toggleColor() end)
 
