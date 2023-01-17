@@ -60,8 +60,14 @@ vim.keymap.set("n", "<leader>w+", function() makeBigger() end)
 vim.keymap.set("n", "<leader>w,", function() makeHorizontalSmaller() end)
 vim.keymap.set("n", "<leader>w.", function() makeHorizontalBigger() end)
 --Terminal
-local function makeTerminal()
+local function makeTerminalHorizontal()
 splitHorizontal()
+vim.cmd("terminal")
+vim.cmd("exe \"normal i\"")
+end
+
+local function makeTerminalVertical()
+splitVertical()
 vim.cmd("terminal")
 vim.cmd("exe \"normal i\"")
 end
@@ -70,4 +76,5 @@ end
 vim.keymap.set("t", "<Esc>","<C-\\><C-n>")
 
 --Open terminal
-vim.keymap.set("n", "<leader>t",function() makeTerminal() end)
+vim.keymap.set("n", "<leader>t",function() makeTerminalHorizontal() end)
+vim.keymap.set("n", "<leader>T",function() makeTerminalVertical() end)
