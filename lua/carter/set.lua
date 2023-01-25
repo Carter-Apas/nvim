@@ -1,4 +1,3 @@
-vim.opt.nu = true
 vim.opt.relativenumber = true
 
 --required for blankline
@@ -15,3 +14,6 @@ vim.cmd.DoMatchParen = true
 
 --Set copy and and paste to the same register
 vim.opt.clipboard = "unnamed"
+
+--Add Date
+vim.cmd("command Date put =strftime('%F')")
