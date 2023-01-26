@@ -16,4 +16,10 @@ vim.cmd.DoMatchParen = true
 vim.opt.clipboard = "unnamed"
 
 --Add Date
-vim.cmd("command Date put =strftime('%F')")
+vim.cmd("command! Date put =strftime('%F')")
+
+vim.api.nvim_command('augroup FormatBeforeSave')
+vim.api.nvim_command('au BufWritePost *.py execute \':!black %\'')
+vim.api.nvim_command('au BufWritePost *.py execute \':!isort %\'')
+vim.api.nvim_command('augroup END')
+
