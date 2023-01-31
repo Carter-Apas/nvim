@@ -9,6 +9,7 @@ vim.keymap.set("n", "<", "gv<")
 
  -- Do not yank x
 vim.keymap.set("n", "x", "\"_x")
+vim.keymap.set("v", "x", "\"_x")
 
 -- Ctrl-A select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
