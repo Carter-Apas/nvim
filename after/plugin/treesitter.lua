@@ -21,5 +21,14 @@ require'nvim-treesitter.configs'.setup {
   },
   autotag = {
     enable = true
+  },
+  indent = {
+    enable = true
   }
 }
+local vim = vim
+local opt = vim.opt
+opt.foldlevel= 20
+opt.foldmethod= "expr"
+opt.foldexpr= "nvim_treesitter#foldexpr()"
+vim.keymap.set("n", "<leader>z", "za")
