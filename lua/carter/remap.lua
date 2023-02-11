@@ -17,12 +17,9 @@ vim.keymap.set("v", "p", "pgvy")
 -- Ctrl-A select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
--- Doubles
---vim.keymap.set("i", "(", "()<Esc>i")
---vim.keymap.set("i", "'", "''<Esc>i")
---vim.keymap.set("i", "\"", "\"\"<Esc>i")
---vim.keymap.set("i", "{", "{}<Esc>i")
---vim.keymap.set("i", "[", "[]<Esc>i")
+--New lines
+vim.keymap.set("n", "o", "o<esc>", {noremap = true})
+vim.keymap.set("n", "O", "O<esc>", {noremap = true})
 
 --Splitting
 --function move down
@@ -63,10 +60,10 @@ vim.keymap.set("n", "<leader>wJ", "<C-w>J")
 vim.keymap.set("n", "<leader>wK", "<C-w>K")
 vim.keymap.set("n", "<leader>wL", "<C-w>L")
 vim.keymap.set("n", "<leader>wr", "<C-w>r")
-vim.keymap.set("n", "<leader>w-", function() makeSmaller() end)
-vim.keymap.set("n", "<leader>w+", function() makeBigger() end)
-vim.keymap.set("n", "<leader>w,", function() makeHorizontalSmaller() end)
-vim.keymap.set("n", "<leader>w.", function() makeHorizontalBigger() end)
+--vim.keymap.set("n", "<leader>w<down>", function() makeSmaller() end)
+--vim.keymap.set("n", "<leader>w<up>", function() makeBigger() end)
+--vim.keymap.set("n", "<leader>w<left>", function() makeHorizontalSmaller() end)
+--vim.keymap.set("n", "<leader>w<right>", function() makeHorizontalBigger() end)
 --Terminal
 local function makeTerminalHorizontal()
 splitHorizontal()

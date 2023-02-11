@@ -57,4 +57,5 @@ return require('packer').startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+  use('mrjones2014/smart-splits.nvim')
 end)
