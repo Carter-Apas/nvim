@@ -16,8 +16,6 @@ return require('packer').startup(function(use)
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
   use('Shatur/neovim-ayu')
-  use {"shortcuts/no-neck-pain.nvim", tag = "*" }
-
   use {
   'VonHeikemen/lsp-zero.nvim',
     requires = {
