@@ -83,3 +83,26 @@ vim.keymap.set("t", "<Esc>","<C-\\><C-n>")
 --Open terminal
 vim.keymap.set("n", "<leader>t",function() makeTerminalHorizontal() end)
 vim.keymap.set("n", "<leader>T",function() makeTerminalVertical() end)
+
+--File Formatting
+local function formatFile()
+  local fileType = vim.bo.filetype
+  print(vim.bo.filetype)
+  if(fileType == "typescript" or fileType == "typescriptreact") then
+    vim.cmd("!npx eslint --fix %")
+    vim.cmd("!prettier --write %")
+  end
+  if(fileType == "json") then
+    vim.cmd("!fixjson --write %")
+  end
+  if(fileType == "python") then
+    vim.cmd("!black %")
+    vim.cmd("!isort %")
+    vim.cmd("!mypy %")
+  end
+end
+
+vim.keymap.set("n", "<leader>f",function() formatFile() end)
+
+
+
