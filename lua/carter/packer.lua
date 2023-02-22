@@ -40,7 +40,6 @@ return require('packer').startup(function(use)
   }
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
-  use 'ThePrimeagen/harpoon'
   use "lukas-reineke/indent-blankline.nvim"
   use {
           "windwp/nvim-autopairs",

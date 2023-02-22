@@ -21,6 +21,9 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 vim.keymap.set("n", "o", "o<esc>", {noremap = true})
 vim.keymap.set("n", "O", "O<esc>", {noremap = true})
 
+--
+vim.keymap.set("n", "q:", ":q<CR>")
+
 --Splitting
 --function move down
 local function splitHorizontal()
@@ -89,13 +92,16 @@ local function formatFile()
   local fileType = vim.bo.filetype
   print(vim.bo.filetype)
   if(fileType == "typescript" or fileType == "typescriptreact") then
+    vim.cmd("w")
     vim.cmd("!npx eslint --fix %")
     vim.cmd("!prettier --write %")
   end
   if(fileType == "json") then
+    vim.cmd("w")
     vim.cmd("!fixjson --write %")
   end
   if(fileType == "python") then
+    vim.cmd("w")
     vim.cmd("!black %")
     vim.cmd("!isort %")
     vim.cmd("!mypy %")
