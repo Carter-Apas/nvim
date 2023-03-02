@@ -63,6 +63,7 @@ vim.keymap.set("n", "<leader>wJ", "<C-w>J")
 vim.keymap.set("n", "<leader>wK", "<C-w>K")
 vim.keymap.set("n", "<leader>wL", "<C-w>L")
 vim.keymap.set("n", "<leader>wr", "<C-w>r")
+vim.keymap.set("n", "<leader>wq", "<C-w>q")
 --vim.keymap.set("n", "<leader>w<down>", function() makeSmaller() end)
 --vim.keymap.set("n", "<leader>w<up>", function() makeBigger() end)
 --vim.keymap.set("n", "<leader>w<left>", function() makeHorizontalSmaller() end)
@@ -84,8 +85,13 @@ end
 vim.keymap.set("t", "<Esc>","<C-\\><C-n>")
 
 --Open terminal
-vim.keymap.set("n", "<leader>t",function() makeTerminalHorizontal() end)
-vim.keymap.set("n", "<leader>T",function() makeTerminalVertical() end)
+vim.keymap.set("n", "<leader>`",function() makeTerminalHorizontal() end)
+vim.keymap.set("n", "<leader>~",function() makeTerminalVertical() end)
+
+--Open Tabs
+vim.keymap.set("n", "<leader>tt", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tl", ":+tabnext<CR>")
+vim.keymap.set("n", "<leader>th", ":-tabnext<CR>")
 
 --File Formatting
 local function formatFile()
