@@ -89,7 +89,7 @@ vim.keymap.set("n", "<leader>`",function() makeTerminalHorizontal() end)
 vim.keymap.set("n", "<leader>~",function() makeTerminalVertical() end)
 
 --Open Tabs
-vim.keymap.set("n", "<leader>tt", ":tabnew<CR>")
+vim.keymap.set("n", "<leader>tt", ":tabnew<CR>:terminal<CR>i")
 vim.keymap.set("n", "<leader>tl", ":+tabnext<CR>")
 vim.keymap.set("n", "<leader>th", ":-tabnext<CR>")
 
@@ -100,6 +100,10 @@ local function formatFile()
   if(fileType == "typescript" or fileType == "typescriptreact") then
     vim.cmd("w")
     vim.cmd("!npx eslint --fix %")
+    vim.cmd("!prettier --write %")
+  end
+  if(fileType == "javascript") then
+    vim.cmd("w")
     vim.cmd("!prettier --write %")
   end
   if(fileType == "json") then
