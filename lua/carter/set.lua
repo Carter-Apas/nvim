@@ -21,8 +21,5 @@ vim.opt.clipboard = "unnamed"
 vim.cmd("command! Date put =strftime('%F')")
 vim.api.nvim_command('augroup FormatBeforeSave')
 vim.api.nvim_command('au!')
-vim.api.nvim_command('au BufWritePost *.py execute \':!black %\'')
-vim.api.nvim_command('au BufWritePost *.py execute \':!isort %\'')
-vim.api.nvim_command('au BufWritePost *.py execute \':!mypy %\'')
 vim.api.nvim_command('augroup END')
 

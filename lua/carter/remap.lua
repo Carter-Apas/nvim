@@ -102,7 +102,7 @@ local function formatFile()
     vim.cmd("!npx eslint --fix %")
     vim.cmd("!prettier --write %")
   end
-  if(fileType == "javascript") then
+  if(fileType == "javascript" or "html" or "css" or "scss") then
     vim.cmd("w")
     vim.cmd("!prettier --write %")
   end
