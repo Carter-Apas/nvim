@@ -116,6 +116,10 @@ local function formatFile()
     vim.cmd("!isort %")
     vim.cmd("!mypy %")
   end
+  if(fileType == "terraform") then
+    vim.cmd("w")
+    vim.cmd("!terraform fmt %")
+  end
 end
 
 vim.keymap.set("n", "<leader>f",function() formatFile() end)
