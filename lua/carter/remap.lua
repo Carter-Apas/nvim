@@ -36,22 +36,6 @@ local function splitVertical()
   vim.cmd("exe \"normal \\<C-w>l\"")
 end
 
-local function makeSmaller()
-  vim.cmd("res -10")
-end
-
-local function makeBigger()
-  vim.cmd("res +10")
-end
-
-local function makeHorizontalSmaller()
-  vim.cmd("vert res -30")
-end
-
-local function makeHorizontalBigger()
-  vim.cmd("vert res +30")
-end
-
 vim.keymap.set("n", "<leader>ws", function() splitHorizontal() end)
 vim.keymap.set("n", "<leader>wv", function() splitVertical() end)
 vim.keymap.set("n", "<leader>wh", "<C-w>h")
