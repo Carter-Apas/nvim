@@ -57,4 +57,10 @@ return require('packer').startup(function(use)
   use('vim-airline/vim-airline-themes')
   use('f-person/git-blame.nvim')
   use('ggandor/leap.nvim')
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
 end)
