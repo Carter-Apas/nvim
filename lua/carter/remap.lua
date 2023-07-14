@@ -11,7 +11,7 @@ vim.keymap.set("n", "x", "\"_x")
 vim.keymap.set("v", "x", "\"_x")
 
  -- Do not yank p
-vim.keymap.set("n", "p", "P")
+vim.keymap.set("n", "p", "p")
 vim.keymap.set("v", "p", "P")
 
 -- Ctrl-A select all

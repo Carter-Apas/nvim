@@ -53,8 +53,6 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use('mrjones2014/smart-splits.nvim')
-  use('vim-airline/vim-airline')
-  use('vim-airline/vim-airline-themes')
   use('f-person/git-blame.nvim')
   use('ggandor/leap.nvim')
   use {
