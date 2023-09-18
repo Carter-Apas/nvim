@@ -108,6 +108,3 @@ local function formatFile()
 end
 
 vim.keymap.set("n", "<leader>f",function() formatFile() end)
-
-
-
