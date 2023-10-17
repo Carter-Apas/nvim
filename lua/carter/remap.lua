@@ -85,27 +85,27 @@ local function formatFile()
   print(vim.bo.filetype)
   if(fileType == "typescript" or fileType == "typescriptreact") then
     vim.cmd("w")
-    vim.cmd("!npx eslint --fix %")
-    vim.cmd("!prettier --write %")
+    vim.cmd("!noglob npx eslint --fix %")
+    vim.cmd("!noglob prettier --write %")
   end
-  if(fileType == "javascript" or "html" or "css" or "scss") then
+  if(fileType == "javascript" or fileType == "html" or fileType == "css" or fileType == "scss") then
     vim.cmd("w")
-    vim.cmd("!prettier --write %")
+    vim.cmd("!noglob prettier --write %")
   end
   if(fileType == "json") then
     vim.cmd("w")
-    vim.cmd("!fixjson --write %")
+    vim.cmd("!noglob fixjson --write %")
   end
   if(fileType == "python") then
     vim.cmd("w")
-    vim.cmd("!black %")
-    vim.cmd("!isort %")
-    vim.cmd("!mypy %")
+    vim.cmd("!noglob black %")
+    vim.cmd("!noglob isort %")
+    vim.cmd("!noglob mypy %")
   end
   if(fileType == "terraform") then
     vim.cmd("w")
-    vim.cmd("!terraform fmt %")
+    vim.cmd("!noglob terraform fmt %")
   end
 end
 
-vim.keymap.set("n", "<leader>f",function() formatFile() end)
+vim.keymap.set("n", "<leader>f",formatFile)
