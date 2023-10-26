@@ -92,7 +92,7 @@ local function formatFile()
     vim.cmd("w")
     vim.cmd("!noglob prettier --write %")
   end
-  if(fileType == "json") then
+  if(fileType == "json" or fileType == "jsonc") then
     vim.cmd("w")
     vim.cmd("!noglob fixjson --write %")
   end
