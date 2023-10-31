@@ -85,8 +85,8 @@ local function formatFile()
   print(vim.bo.filetype)
   if(fileType == "typescript" or fileType == "typescriptreact") then
     vim.cmd("w")
-    vim.cmd("!noglob npx eslint --fix %")
     vim.cmd("!noglob prettier --write %")
+    vim.cmd("!noglob npx eslint --fix %")
   end
   if(fileType == "javascript" or fileType == "html" or fileType == "css" or fileType == "scss") then
     vim.cmd("w")
