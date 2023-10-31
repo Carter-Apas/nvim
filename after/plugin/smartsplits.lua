@@ -12,7 +12,7 @@ require('smart-splits').setup({
   -- whether to wrap to opposite side when cursor is at an edge
   -- e.g. by default, moving left at the left edge will jump
   -- to the rightmost window, and vice versa, same for up/down.
-  wrap_at_edge = true,
+  wrap_at_edge = "wrap",
   -- when moving cursor between splits left or right,
   -- place the cursor on the same row of the *screen*
   -- regardless of line numbers. False by default.
@@ -47,7 +47,7 @@ require('smart-splits').setup({
   -- enable or disable the tmux integration
   tmux_integration = false,
   -- disable tmux navigation if current tmux pane is zoomed
-  disable_tmux_nav_when_zoomed = true,
+  disable_tmux_nav_when_zoomed = false,
 })
 
 local start = require('smart-splits').start_resize_mode
