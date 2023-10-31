@@ -26,11 +26,12 @@ local plugins = {
     tag = 'nightly'
   },
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  {"williamboman/mason.nvim"},
   {'neovim/nvim-lspconfig'},
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
-  {'nvim-treesitter/nvim-treesitter'},
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {'Shatur/neovim-ayu'},
   {'tpope/vim-fugitive'},
   {'airblade/vim-gitgutter'},
@@ -48,6 +49,6 @@ local plugins = {
   }
 }
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins)
 
 require("carter")
