@@ -22,3 +22,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts) 
   end
 })
+
+local default_setup = function(server)
+  lspconfig[server].setup({
+    capabilities = lsp_capabilities,
+  })
+end
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {},
+  handlers = {default_setup},
+})
