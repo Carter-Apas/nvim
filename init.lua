@@ -37,7 +37,11 @@ local plugins = {
   {'tpope/vim-fugitive'},
   {'airblade/vim-gitgutter'},
   {'lukas-reineke/indent-blankline.nvim'},
-  {"windwp/nvim-autopairs"},
+ {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
   {'mrjones2014/smart-splits.nvim'},
   {'ggandor/leap.nvim'},
   {'f-person/git-blame.nvim'},
