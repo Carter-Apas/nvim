@@ -1,1 +1,1 @@
-vim.opt.updatetime = 100 
+vim.opt.updatetime = 100

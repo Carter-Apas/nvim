@@ -6,34 +6,34 @@ vim.keymap.set("n", "<leader>p", "\"+p")
 vim.keymap.set("n", ">", "gv>")
 vim.keymap.set("n", "<", "gv<")
 
- -- Do not yank x
+-- Do not yank x
 vim.keymap.set("n", "x", "\"_x")
 vim.keymap.set("v", "x", "\"_x")
 
- -- Do not yank p
+-- Do not yank p
 vim.keymap.set("n", "p", "p")
 vim.keymap.set("v", "p", "P")
 
 -- Ctrl-A select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
---New lines
+-- New lines
 vim.keymap.set("n", "o", "o<esc>", {noremap = true})
 vim.keymap.set("n", "O", "O<esc>", {noremap = true})
 
 --
 vim.keymap.set("n", "q:", ":q<CR>")
 
---Splitting
---function move down
+-- Splitting
+-- function move down
 local function splitHorizontal()
-  vim.cmd("split")
-  vim.cmd("exe \"normal \\<C-w>j\"")
+    vim.cmd("split")
+    vim.cmd("exe \"normal \\<C-w>j\"")
 end
 
 local function splitVertical()
-  vim.cmd("vsplit")
-  vim.cmd("exe \"normal \\<C-w>l\"")
+    vim.cmd("vsplit")
+    vim.cmd("exe \"normal \\<C-w>l\"")
 end
 
 vim.keymap.set("n", "<leader>ws", function() splitHorizontal() end)
@@ -50,62 +50,67 @@ vim.keymap.set("n", "<leader>wr", "<C-w>r")
 vim.keymap.set("n", "<leader>wq", "<C-w>q")
 vim.keymap.set("n", "<leader>wa", vim.cmd.qa)
 vim.keymap.set("n", "<leader>w=", "<C-w>=")
---vim.keymap.set("n", "<leader>w<down>", function() makeSmaller() end)
---vim.keymap.set("n", "<leader>w<up>", function() makeBigger() end)
---vim.keymap.set("n", "<leader>w<left>", function() makeHorizontalSmaller() end)
---vim.keymap.set("n", "<leader>w<right>", function() makeHorizontalBigger() end)
---Terminal
+-- vim.keymap.set("n", "<leader>w<down>", function() makeSmaller() end)
+-- vim.keymap.set("n", "<leader>w<up>", function() makeBigger() end)
+-- vim.keymap.set("n", "<leader>w<left>", function() makeHorizontalSmaller() end)
+-- vim.keymap.set("n", "<leader>w<right>", function() makeHorizontalBigger() end)
+-- Terminal
 local function makeTerminalHorizontal()
-splitHorizontal()
-vim.cmd("terminal")
-vim.cmd("exe \"normal i\"")
+    splitHorizontal()
+    vim.cmd("terminal")
+    vim.cmd("exe \"normal i\"")
 end
 
 local function makeTerminalVertical()
-splitVertical()
-vim.cmd("terminal")
-vim.cmd("exe \"normal i\"")
+    splitVertical()
+    vim.cmd("terminal")
+    vim.cmd("exe \"normal i\"")
 end
 
---Esc terminal back to normal mode
-vim.keymap.set("t", "<Esc>","<C-\\><C-n>")
+-- Esc terminal back to normal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
---Open terminal
-vim.keymap.set("n", "<leader>`",function() makeTerminalHorizontal() end)
-vim.keymap.set("n", "<leader>~",function() makeTerminalVertical() end)
+-- Open terminal
+vim.keymap.set("n", "<leader>`", function() makeTerminalHorizontal() end)
+vim.keymap.set("n", "<leader>~", function() makeTerminalVertical() end)
 
---Open Tabs
+-- Open Tabs
 vim.keymap.set("n", "<leader>tt", ":tabnew<CR>:terminal<CR>i")
 vim.keymap.set("n", "<leader>tl", ":+tabnext<CR>")
 vim.keymap.set("n", "<leader>th", ":-tabnext<CR>")
 
---File Formatting
+-- File Formatting
 local function formatFile()
-  local fileType = vim.bo.filetype
-  print(vim.bo.filetype)
-  if(fileType == "typescript" or fileType == "typescriptreact") then
-    vim.cmd("w")
-    vim.cmd("!noglob prettier --write %")
-    vim.cmd("!noglob npx eslint --fix %")
-  end
-  if(fileType == "javascript" or fileType == "html" or fileType == "css" or fileType == "scss") then
-    vim.cmd("w")
-    vim.cmd("!noglob prettier --write %")
-  end
-  if(fileType == "json" or fileType == "jsonc") then
-    vim.cmd("w")
-    vim.cmd("!noglob fixjson --write %")
-  end
-  if(fileType == "python") then
-    vim.cmd("w")
-    vim.cmd("!noglob black %")
-    vim.cmd("!noglob isort %")
-    vim.cmd("!noglob mypy %")
-  end
-  if(fileType == "terraform") then
-    vim.cmd("w")
-    vim.cmd("!noglob terraform fmt %")
-  end
+    local fileType = vim.bo.filetype
+    print(vim.bo.filetype)
+    if (fileType == "typescript" or fileType == "typescriptreact") then
+        vim.cmd("w")
+        vim.cmd("!noglob prettier --write %")
+        vim.cmd("!noglob npx eslint --fix %")
+    end
+    if (fileType == "javascript" or fileType == "html" or fileType == "css" or
+        fileType == "scss") then
+        vim.cmd("w")
+        vim.cmd("!noglob prettier --write %")
+    end
+    if (fileType == "json" or fileType == "jsonc") then
+        vim.cmd("w")
+        vim.cmd("!noglob fixjson --write %")
+    end
+    if (fileType == "python") then
+        vim.cmd("w")
+        vim.cmd("!noglob black %")
+        vim.cmd("!noglob isort %")
+        vim.cmd("!noglob mypy %")
+    end
+    if (fileType == "terraform") then
+        vim.cmd("w")
+        vim.cmd("!noglob terraform fmt %")
+    end
+    if (fileType == "lua") then
+        vim.cmd("w")
+        vim.cmd("!noglob lua-format -i %")
+    end
 end
 
-vim.keymap.set("n", "<leader>f",formatFile)
+vim.keymap.set("n", "<leader>f", formatFile)
