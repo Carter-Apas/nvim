@@ -30,16 +30,11 @@ local plugins = {
   {'neovim/nvim-lspconfig'},
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
-  {
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!).
-    build = "make install_jsregexp"
-  },
+  {"L3MON4D3/LuaSnip"},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {'Shatur/neovim-ayu'},
   {'tpope/vim-fugitive'},
+  {'tpope/vim-surround'},
   {'airblade/vim-gitgutter'},
   {'lukas-reineke/indent-blankline.nvim'},
   {
@@ -47,6 +42,7 @@ local plugins = {
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
+  {'windwp/nvim-ts-autotag'},
   {'mrjones2014/smart-splits.nvim'},
   {'ggandor/leap.nvim'},
   {'f-person/git-blame.nvim'},
