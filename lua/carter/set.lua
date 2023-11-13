@@ -15,7 +15,7 @@ vim.cmd.DoMatchParen = true
 vim.opt.guicursor =
     "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,sm:block-blinkwait175-blinkoff150-blinkon175"
 -- Set copy and and paste to the same register
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 
 -- Add Date
 vim.cmd("command! Date put =strftime('%F')")

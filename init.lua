@@ -24,7 +24,8 @@ local plugins = {
     {"L3MON4D3/LuaSnip", version = "v2.*"}, {"rafamadriz/friendly-snippets"},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {'Shatur/neovim-ayu'}, {'tpope/vim-fugitive'}, {'tpope/vim-surround'},
-    {'airblade/vim-gitgutter'}, {'lukas-reineke/indent-blankline.nvim'}, {
+    {'airblade/vim-gitgutter'},
+    {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}}, {
         'windwp/nvim-autopairs',
         event = "InsertEnter",
         opts = {} -- this is equalent to setup({}) function

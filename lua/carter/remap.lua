@@ -21,8 +21,11 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 vim.keymap.set("n", "o", "o<esc>", {noremap = true})
 vim.keymap.set("n", "O", "O<esc>", {noremap = true})
 
---
+-- set quit console to be also just quit for typos
 vim.keymap.set("n", "q:", ":q<CR>")
+
+vim.keymap.set("n", "-", "g_")
+vim.keymap.set("v", "-", "g_")
 
 -- Splitting
 -- function move down
