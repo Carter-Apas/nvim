@@ -114,6 +114,10 @@ local function formatFile()
         vim.cmd("w")
         vim.cmd("!noglob lua-format -i %")
     end
+    if (fileType == "yaml") then
+        vim.cmd("w")
+        vim.cmd("!noglob yamlfmt %")
+    end
 end
 
 vim.keymap.set("n", "<leader>f", formatFile)
