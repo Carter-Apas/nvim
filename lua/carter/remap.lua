@@ -82,6 +82,10 @@ vim.keymap.set("n", "<leader>tt", ":tabnew<CR>:terminal<CR>i")
 vim.keymap.set("n", "<leader>tl", ":+tabnext<CR>")
 vim.keymap.set("n", "<leader>th", ":-tabnext<CR>")
 
+-- Move Tabs
+vim.keymap.set("n", "<leader>tL", ":tabm +1<CR>")
+vim.keymap.set("n", "<leader>tH", ":tabm -1<CR>")
+
 -- File Formatting
 local function formatFile()
     local fileType = vim.bo.filetype
