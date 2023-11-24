@@ -30,13 +30,13 @@ vim.keymap.set("v", "-", "g_")
 -- Splitting
 -- function move down
 local function splitHorizontal()
-    vim.cmd("split")
-    vim.cmd("exe \"normal \\<C-w>j\"")
+  vim.cmd("split")
+  vim.cmd("exe \"normal \\<C-w>j\"")
 end
 
 local function splitVertical()
-    vim.cmd("vsplit")
-    vim.cmd("exe \"normal \\<C-w>l\"")
+  vim.cmd("vsplit")
+  vim.cmd("exe \"normal \\<C-w>l\"")
 end
 
 vim.keymap.set("n", "<leader>ws", function() splitHorizontal() end)
@@ -59,15 +59,15 @@ vim.keymap.set("n", "<leader>w=", "<C-w>=")
 -- vim.keymap.set("n", "<leader>w<right>", function() makeHorizontalBigger() end)
 -- Terminal
 local function makeTerminalHorizontal()
-    splitHorizontal()
-    vim.cmd("terminal")
-    vim.cmd("exe \"normal i\"")
+  splitHorizontal()
+  vim.cmd("terminal")
+  vim.cmd("exe \"normal i\"")
 end
 
 local function makeTerminalVertical()
-    splitVertical()
-    vim.cmd("terminal")
-    vim.cmd("exe \"normal i\"")
+  splitVertical()
+  vim.cmd("terminal")
+  vim.cmd("exe \"normal i\"")
 end
 
 -- Esc terminal back to normal mode
@@ -88,40 +88,40 @@ vim.keymap.set("n", "<leader>tH", ":tabm -1<CR>")
 
 -- File Formatting
 local function formatFile()
-    local fileType = vim.bo.filetype
-    print(vim.bo.filetype)
-    if (fileType == "typescript" or fileType == "typescriptreact") then
-        vim.cmd("w")
-        vim.cmd("!noglob prettier --write %")
-        vim.cmd("!noglob npx eslint --fix %")
-    end
-    if (fileType == "javascript" or fileType == "html" or fileType == "css" or
-        fileType == "scss") then
-        vim.cmd("w")
-        vim.cmd("!noglob prettier --write %")
-    end
-    if (fileType == "json" or fileType == "jsonc") then
-        vim.cmd("w")
-        vim.cmd("!noglob fixjson --write %")
-    end
-    if (fileType == "python") then
-        vim.cmd("w")
-        vim.cmd("!noglob black %")
-        vim.cmd("!noglob isort %")
-        vim.cmd("!noglob mypy %")
-    end
-    if (fileType == "terraform") then
-        vim.cmd("w")
-        vim.cmd("!noglob terraform fmt %")
-    end
-    if (fileType == "lua") then
-        vim.cmd("w")
-        vim.cmd("!noglob lua-format -i %")
-    end
-    if (fileType == "yaml") then
-        vim.cmd("w")
-        vim.cmd("!noglob yamlfmt %")
-    end
+  local fileType = vim.bo.filetype
+  print(vim.bo.filetype)
+  if (fileType == "typescript" or fileType == "typescriptreact") then
+    vim.cmd("w")
+    vim.cmd("!noglob prettier --write %")
+    vim.cmd("!noglob npx eslint --fix %")
+  end
+  if (fileType == "javascript" or fileType == "html" or fileType == "css" or
+    fileType == "scss") then
+    vim.cmd("w")
+    vim.cmd("!noglob prettier --write %")
+  end
+  if (fileType == "json" or fileType == "jsonc") then
+    vim.cmd("w")
+    vim.cmd("!noglob fixjson --write %")
+  end
+  if (fileType == "python") then
+    vim.cmd("w")
+    vim.cmd("!noglob black %")
+    vim.cmd("!noglob isort %")
+    vim.cmd("!noglob mypy %")
+  end
+  if (fileType == "terraform") then
+    vim.cmd("w")
+    vim.cmd("!noglob terraform fmt %")
+  end
+  if (fileType == "lua") then
+    vim.cmd("w")
+    vim.cmd("!noglob lua-format -i % -c ~/.config/nvim/lua/carter/luaformat.yml")
+  end
+  if (fileType == "yaml") then
+    vim.cmd("w")
+    vim.cmd("!noglob yamlfmt %")
+  end
 end
 
 vim.keymap.set("n", "<leader>f", formatFile)
