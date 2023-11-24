@@ -31,7 +31,13 @@ local plugins = {
   {"neovim/nvim-lspconfig"},
   {"hrsh7th/cmp-nvim-lsp"},
   {"hrsh7th/nvim-cmp"},
-  {"L3MON4D3/LuaSnip", version = "v2.*"},
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = {"rafamadriz/friendly-snippets"},
+    version = "v2.*",
+    build = "make install_jsregexp"
+  },
+  { 'saadparwaiz1/cmp_luasnip' },
   {"rafamadriz/friendly-snippets"},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"Shatur/neovim-ayu"},

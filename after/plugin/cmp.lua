@@ -1,5 +1,9 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+
+luasnip.filetype_extend("typescriptreact", {"javascript"})
+luasnip.filetype_extend("typescriptreact", {"html"})
+
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
