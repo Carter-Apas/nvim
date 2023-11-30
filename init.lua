@@ -37,7 +37,7 @@ local plugins = {
     version = "v2.*",
     build = "make install_jsregexp"
   },
-  { 'saadparwaiz1/cmp_luasnip' },
+  {"saadparwaiz1/cmp_luasnip"},
   {"rafamadriz/friendly-snippets"},
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"Shatur/neovim-ayu"},
