@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.1.0](https://github.com/Carter-Apas/nvim/compare/v1.0.0...v1.1.0) (2023-11-30)
+
+
+### Features
+
+* Add lua formatting ([8625396](https://github.com/Carter-Apas/nvim/commit/86253969a7b9d62abb34d83f68ea2ef07179a070))
+* Add lua lint custom config ([ee11314](https://github.com/Carter-Apas/nvim/commit/ee113148caab0fc394ec22cf5fcccc2b3a4dc568))
+* Add mason lsp-config ([29ab34d](https://github.com/Carter-Apas/nvim/commit/29ab34d8ad0a1a3d4b5f91cde9a9ce9e193618c2))
+* Add moving tabs ([b4ed1de](https://github.com/Carter-Apas/nvim/commit/b4ed1de12d1df5463f1b62b4b78bf8ee422758ef))
+* Add yaml linting ([a111717](https://github.com/Carter-Apas/nvim/commit/a11171786c2fe38f702c4032386706550d8ac639))
+* Merge mason with lsp, start cmp file ([f95e5c1](https://github.com/Carter-Apas/nvim/commit/f95e5c183b0de75644d640187bf9e9c88cd00838))
+
+
+### Bug Fixes
+
+* Add luasnip filetypes ([82a0b18](https://github.com/Carter-Apas/nvim/commit/82a0b18c8714c3f795d6d0a385e023a9868a6c8b))
+* Add vim surround ([fcad342](https://github.com/Carter-Apas/nvim/commit/fcad342a038803b3b30029adc7463080e4efaf62))
+* Autopairs migrate to lazy ([51f4885](https://github.com/Carter-Apas/nvim/commit/51f4885a88a044da7ef825dd3363f58f7da3ccae))
+* Blankline and clipboard ([8ccb2e5](https://github.com/Carter-Apas/nvim/commit/8ccb2e5000931534a84f226dd93ece8de068de02))
+* Install Mason ([6ce604c](https://github.com/Carter-Apas/nvim/commit/6ce604c9c5de23a0721b0b90c5eaa1122e9ee336))
+* LuaSnip now working with cmp ([299ebd5](https://github.com/Carter-Apas/nvim/commit/299ebd5ab1dec99b018624c675f81c9679384dc1))
+* LuaSnip&lt;Tab&gt; ([9aff97f](https://github.com/Carter-Apas/nvim/commit/9aff97f3e08d839bc7ae1ee67b5fd0b78e3810de))
+* Run prettier before eslint ([9425301](https://github.com/Carter-Apas/nvim/commit/9425301e27d98169ea69fab5f9cce2cc1f1b644f))
+
 ## 1.0.0 (2023-10-31)
 
 
